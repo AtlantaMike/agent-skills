@@ -1,0 +1,7 @@
+{
+  "buildCommand": "cd face-censor-app && npm install && npm run build",
+  "outputDirectory": "face-censor-app/.next",
+  "installCommand": "echo skip",
+  "framework": "nextjs",
+  "devCommand": "cd face-censor-app && npm run dev"
+}
