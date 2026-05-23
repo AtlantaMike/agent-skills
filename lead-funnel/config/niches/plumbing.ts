@@ -1,0 +1,122 @@
+import type { NicheConfig } from "@/types";
+
+export const plumbing: NicheConfig = {
+  slug: "plumbing",
+  name: "Plumbing",
+  tagline: "Exclusive Plumbing Service Contracts",
+  heroHeadline: "Get Matched With Exclusive Plumbing Service Contracts In Your Area",
+  heroSubheadline: "We connect qualified plumbing contractors with verified residential and commercial service agreements — steady work, no bidding wars. Answer a few questions to see if you qualify.",
+  ctaText: "Check My Eligibility →",
+  accentColor: "#0369a1",
+  spotsPerMonth: 9,
+  socialProofCount: 489,
+  socialProofLabel: "plumbing contractors matched this month",
+  trustBadges: [
+    "Verified Service Agreements",
+    "Residential & Commercial",
+    "Exclusive Territory",
+    "Consistent Pipeline",
+  ],
+  thankYouHeadline: "You're Pre-Qualified! 🎉",
+  thankYouSubheadline: "A contract specialist will contact you within 24 hours with your plumbing contract matches.",
+  calendarUrl: "https://calendly.com/your-calendar-link",
+  steps: [
+    {
+      id: "in_business",
+      type: "option",
+      question: "Are you currently operating a licensed plumbing business?",
+      subtitle: "We only partner with active, licensed plumbing operations",
+      options: [
+        { label: "Yes, actively operating", value: "yes", score: 20 },
+        { label: "No, not yet", value: "no", score: 0, disqualify: true },
+      ],
+    },
+    {
+      id: "years_in_business",
+      type: "option",
+      question: "How long have you been in the plumbing industry?",
+      options: [
+        { label: "Less than 1 year", value: "under_1", score: 5, icon: "🌱" },
+        { label: "1 – 3 years", value: "1_3", score: 15, icon: "🔧" },
+        { label: "3 – 5 years", value: "3_5", score: 25, icon: "⭐" },
+        { label: "5+ years", value: "5_plus", score: 35, icon: "🏆" },
+      ],
+    },
+    {
+      id: "plumbers",
+      type: "option",
+      question: "How many licensed plumbers do you have on staff?",
+      options: [
+        { label: "Just me (master plumber)", value: "solo", score: 5, icon: "🙋" },
+        { label: "2 – 4 plumbers", value: "2_4", score: 15, icon: "👥" },
+        { label: "5 – 10 plumbers", value: "5_10", score: 25, icon: "🏢" },
+        { label: "10+ plumbers", value: "10_plus", score: 35, icon: "🏗️" },
+      ],
+    },
+    {
+      id: "services",
+      type: "multiselect",
+      question: "Which plumbing services do you offer?",
+      subtitle: "Select all that apply",
+      options: [
+        { label: "Residential Repairs & Service", value: "res_service", score: 8 },
+        { label: "Commercial Plumbing", value: "commercial", score: 15 },
+        { label: "New Construction Rough-In", value: "new_construction", score: 12 },
+        { label: "Drain Cleaning & Hydro-Jet", value: "drain", score: 10 },
+        { label: "Water Heater Installation", value: "water_heater", score: 10 },
+        { label: "Repiping & Pipe Replacement", value: "repiping", score: 12 },
+        { label: "Emergency / 24-7 Service", value: "emergency", score: 15 },
+        { label: "Backflow Prevention & Testing", value: "backflow", score: 10 },
+      ],
+    },
+    {
+      id: "monthly_revenue",
+      type: "option",
+      question: "What is your current average monthly revenue?",
+      options: [
+        { label: "Under $10,000/month", value: "under_10k", score: 5, icon: "💵" },
+        { label: "$10,000 – $30,000/month", value: "10k_30k", score: 15, icon: "💰" },
+        { label: "$30,000 – $75,000/month", value: "30k_75k", score: 25, icon: "💎" },
+        { label: "$75,000+/month", value: "75k_plus", score: 35, icon: "🏦" },
+      ],
+    },
+    {
+      id: "licensed_insured",
+      type: "option",
+      question: "Is your business licensed, bonded, and insured?",
+      options: [
+        { label: "Yes — licensed, bonded & insured", value: "yes", score: 20 },
+        { label: "Working on it", value: "pending", score: 5 },
+        { label: "No, not yet", value: "no", score: 0, disqualify: true },
+      ],
+    },
+    {
+      id: "biggest_challenge",
+      type: "option",
+      question: "What is your biggest challenge right now?",
+      options: [
+        { label: "Consistent service call volume", value: "volume", score: 10, icon: "📞" },
+        { label: "Growing commercial accounts", value: "commercial", score: 12, icon: "🏢" },
+        { label: "Technician recruitment", value: "staffing", score: 8, icon: "👷" },
+        { label: "Adding service agreements / recurring revenue", value: "recurring", score: 12, icon: "🔄" },
+      ],
+    },
+    {
+      id: "revenue_goal",
+      type: "option",
+      question: "What monthly revenue are you targeting in the next 6 months?",
+      options: [
+        { label: "$20,000 – $50,000/month", value: "20k_50k", score: 10, icon: "🎯" },
+        { label: "$50,000 – $100,000/month", value: "50k_100k", score: 20, icon: "📈" },
+        { label: "$100,000 – $250,000/month", value: "100k_250k", score: 30, icon: "🚀" },
+        { label: "$250,000+/month", value: "250k_plus", score: 35, icon: "💫" },
+      ],
+    },
+    {
+      id: "contact",
+      type: "contact",
+      question: "Where should we send your plumbing contract matches?",
+      subtitle: "Your information is 100% confidential and never sold to third parties",
+    },
+  ],
+};

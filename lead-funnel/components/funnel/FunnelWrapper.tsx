@@ -118,7 +118,7 @@ export function FunnelWrapper({ config }: Props) {
     if (!validateContact()) return;
     setSubmitting(true);
     try {
-      await fetch("/api/leads", {
+      const res = await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -129,7 +129,14 @@ export function FunnelWrapper({ config }: Props) {
           utmCampaign: searchParams.get("utm_campaign"),
         }),
       });
-      router.push("/apply/thank-you");
+      const data = await res.json();
+      // Route hot leads to payment gate if Stripe is configured
+      const stripeEnabled = process.env.NEXT_PUBLIC_STRIPE_ENABLED === "true";
+      if (stripeEnabled && (data.tier === "hot" || data.tier === "warm")) {
+        router.push(`/checkout?leadId=${data.leadId ?? ""}&email=${encodeURIComponent(contact.email)}`);
+      } else {
+        router.push("/apply/thank-you");
+      }
     } catch {
       setSubmitting(false);
     }

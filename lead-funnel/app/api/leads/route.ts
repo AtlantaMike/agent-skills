@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { saveLead } from "@/lib/storage";
 import { sendWebhook } from "@/lib/webhooks";
+import { sendEmailAlert, sendSmsAlert } from "@/lib/notifications";
 import { scoreLead } from "@/lib/lead-scoring";
 import { getNicheConfig } from "@/config";
 import type { Lead } from "@/types";
@@ -30,9 +31,13 @@ export async function POST(req: NextRequest) {
     };
 
     saveLead(lead);
-    await sendWebhook(lead);
+    await Promise.all([
+      sendWebhook(lead),
+      sendEmailAlert(lead),
+      sendSmsAlert(lead),
+    ]);
 
-    return NextResponse.json({ success: true, tier, score });
+    return NextResponse.json({ success: true, tier, score, leadId: lead.id });
   } catch (err) {
     console.error(err);
     return NextResponse.json({ success: false }, { status: 500 });

@@ -1,0 +1,133 @@
+import type { NicheConfig } from "@/types";
+
+export const pestControl: NicheConfig = {
+  slug: "pest-control",
+  name: "Pest Control",
+  tagline: "Exclusive Pest Control Service Contracts",
+  heroHeadline: "Get Matched With Exclusive Pest Control Contracts In Your Area",
+  heroSubheadline: "We connect qualified pest control operators with verified residential and commercial service agreements — recurring revenue, no cold calling. See if you qualify in 2 minutes.",
+  ctaText: "Check My Eligibility →",
+  accentColor: "#7c3aed",
+  spotsPerMonth: 8,
+  socialProofCount: 371,
+  socialProofLabel: "pest control operators matched this month",
+  trustBadges: [
+    "Recurring Service Agreements",
+    "Residential & Commercial",
+    "Exclusive Territory",
+    "Predictable Monthly Revenue",
+  ],
+  thankYouHeadline: "You're Pre-Qualified! 🎉",
+  thankYouSubheadline: "A contract specialist will reach out within 24 hours with your pest control contract matches.",
+  calendarUrl: "https://calendly.com/your-calendar-link",
+  steps: [
+    {
+      id: "in_business",
+      type: "option",
+      question: "Are you currently operating a licensed pest control business?",
+      subtitle: "We only partner with active, licensed pest control operators",
+      options: [
+        { label: "Yes, actively operating", value: "yes", score: 20 },
+        { label: "No, not yet", value: "no", score: 0, disqualify: true },
+      ],
+    },
+    {
+      id: "years_in_business",
+      type: "option",
+      question: "How long have you been in the pest control industry?",
+      options: [
+        { label: "Less than 1 year", value: "under_1", score: 5, icon: "🌱" },
+        { label: "1 – 3 years", value: "1_3", score: 15, icon: "🐛" },
+        { label: "3 – 5 years", value: "3_5", score: 25, icon: "⭐" },
+        { label: "5+ years", value: "5_plus", score: 35, icon: "🏆" },
+      ],
+    },
+    {
+      id: "technicians",
+      type: "option",
+      question: "How many licensed technicians do you currently have?",
+      options: [
+        { label: "Just me", value: "solo", score: 5, icon: "🙋" },
+        { label: "2 – 4 technicians", value: "2_4", score: 15, icon: "👥" },
+        { label: "5 – 10 technicians", value: "5_10", score: 25, icon: "🏢" },
+        { label: "10+ technicians", value: "10_plus", score: 35, icon: "🏗️" },
+      ],
+    },
+    {
+      id: "services",
+      type: "multiselect",
+      question: "Which pest control services do you offer?",
+      subtitle: "Select all that apply",
+      options: [
+        { label: "General Pest Control (quarterly)", value: "general", score: 10 },
+        { label: "Termite Inspection & Treatment", value: "termite", score: 15 },
+        { label: "Bed Bug Treatment", value: "bed_bug", score: 12 },
+        { label: "Rodent Control", value: "rodent", score: 10 },
+        { label: "Mosquito & Tick Programs", value: "mosquito", score: 10 },
+        { label: "Commercial / Food Service", value: "commercial", score: 15 },
+        { label: "Wildlife Removal", value: "wildlife", score: 10 },
+        { label: "Fumigation", value: "fumigation", score: 12 },
+      ],
+    },
+    {
+      id: "monthly_revenue",
+      type: "option",
+      question: "What is your current average monthly revenue?",
+      options: [
+        { label: "Under $8,000/month", value: "under_8k", score: 5, icon: "💵" },
+        { label: "$8,000 – $20,000/month", value: "8k_20k", score: 15, icon: "💰" },
+        { label: "$20,000 – $50,000/month", value: "20k_50k", score: 25, icon: "💎" },
+        { label: "$50,000+/month", value: "50k_plus", score: 35, icon: "🏦" },
+      ],
+    },
+    {
+      id: "licensed_insured",
+      type: "option",
+      question: "Is your business licensed by your state pesticide regulatory authority and fully insured?",
+      options: [
+        { label: "Yes — licensed & insured", value: "yes", score: 20 },
+        { label: "Working on it", value: "pending", score: 5 },
+        { label: "No, not yet", value: "no", score: 0, disqualify: true },
+      ],
+    },
+    {
+      id: "recurring_accounts",
+      type: "option",
+      question: "How many active recurring service accounts do you currently maintain?",
+      options: [
+        { label: "0 – 25 accounts", value: "0_25", score: 5, icon: "📋" },
+        { label: "25 – 100 accounts", value: "25_100", score: 15, icon: "📊" },
+        { label: "100 – 300 accounts", value: "100_300", score: 25, icon: "📈" },
+        { label: "300+ accounts", value: "300_plus", score: 35, icon: "🚀" },
+      ],
+    },
+    {
+      id: "biggest_challenge",
+      type: "option",
+      question: "What is your biggest challenge right now?",
+      options: [
+        { label: "Adding recurring service accounts", value: "recurring", score: 12, icon: "🔄" },
+        { label: "Landing commercial contracts", value: "commercial", score: 12, icon: "🏢" },
+        { label: "Technician hiring & training", value: "staffing", score: 8, icon: "👷" },
+        { label: "Reducing customer churn", value: "churn", score: 10, icon: "📉" },
+      ],
+    },
+    {
+      id: "revenue_goal",
+      type: "option",
+      question: "What monthly revenue are you targeting in the next 6 months?",
+      options: [
+        { label: "$15,000 – $30,000/month", value: "15k_30k", score: 10, icon: "🎯" },
+        { label: "$30,000 – $75,000/month", value: "30k_75k", score: 20, icon: "📈" },
+        { label: "$75,000 – $150,000/month", value: "75k_150k", score: 30, icon: "🚀" },
+        { label: "$150,000+/month", value: "150k_plus", score: 35, icon: "💫" },
+      ],
+    },
+    {
+      id: "contact",
+      type: "contact",
+      question: "Where should we send your pest control contract matches?",
+      subtitle: "Your information is 100% confidential and never sold to third parties",
+    },
+  ],
+};

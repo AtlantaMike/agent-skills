@@ -26,6 +26,21 @@
   --brand-700: #15803d;
 }
 
+[data-niche="plumbing"] {
+  --brand-50:  #f0f9ff;
+  --brand-100: #e0f2fe;
+  --brand-500: #0ea5e9;
+  --brand-600: #0284c7;
+  --brand-700: #0369a1;
+}
+[data-niche="pest-control"] {
+  --brand-50:  #faf5ff;
+  --brand-100: #f3e8ff;
+  --brand-500: #a855f7;
+  --brand-600: #9333ea;
+  --brand-700: #7c3aed;
+}
+
 html {
   scroll-behavior: smooth;
 }
