@@ -1,0 +1,121 @@
+import type { NicheConfig } from "@/types";
+
+export const landscaping: NicheConfig = {
+  slug: "landscaping",
+  name: "Landscaping",
+  tagline: "Exclusive Landscaping & Lawn Care Contracts",
+  heroHeadline: "Get Matched With Exclusive Landscaping Contracts In Your Area",
+  heroSubheadline: "We connect qualified lawn care and landscaping companies with verified recurring contract opportunities. Answer a few questions to see if you qualify.",
+  ctaText: "Check My Eligibility →",
+  accentColor: "#15803d",
+  spotsPerMonth: 8,
+  socialProofCount: 534,
+  socialProofLabel: "landscaping companies matched this month",
+  trustBadges: [
+    "Verified Recurring Contracts",
+    "Commercial & HOA Properties",
+    "Exclusive Territory",
+    "Year-Round Revenue",
+  ],
+  thankYouHeadline: "You're Pre-Qualified! 🎉",
+  thankYouSubheadline: "A contract specialist will reach out within 24 hours with your landscaping contract matches.",
+  calendarUrl: "https://calendly.com/your-calendar-link",
+  steps: [
+    {
+      id: "in_business",
+      type: "option",
+      question: "Are you currently operating a landscaping or lawn care business?",
+      options: [
+        { label: "Yes, actively operating", value: "yes", score: 20 },
+        { label: "No, not yet", value: "no", score: 0, disqualify: true },
+      ],
+    },
+    {
+      id: "years_in_business",
+      type: "option",
+      question: "How long have you been in the landscaping industry?",
+      options: [
+        { label: "Less than 1 year", value: "under_1", score: 5, icon: "🌱" },
+        { label: "1 – 3 years", value: "1_3", score: 15, icon: "🌿" },
+        { label: "3 – 5 years", value: "3_5", score: 25, icon: "🌳" },
+        { label: "5+ years", value: "5_plus", score: 35, icon: "🏆" },
+      ],
+    },
+    {
+      id: "crews",
+      type: "option",
+      question: "How many active crews do you currently operate?",
+      options: [
+        { label: "Solo (just me)", value: "solo", score: 5, icon: "🙋" },
+        { label: "1 – 2 crews", value: "1_2", score: 15, icon: "👥" },
+        { label: "3 – 5 crews", value: "3_5", score: 25, icon: "🚛" },
+        { label: "6+ crews", value: "6_plus", score: 35, icon: "🏗️" },
+      ],
+    },
+    {
+      id: "services",
+      type: "multiselect",
+      question: "Which services does your company offer?",
+      subtitle: "Select all that apply",
+      options: [
+        { label: "Lawn Mowing & Maintenance", value: "mowing", score: 8 },
+        { label: "Landscape Design & Installation", value: "design", score: 12 },
+        { label: "Tree & Shrub Care", value: "trees", score: 10 },
+        { label: "Irrigation Systems", value: "irrigation", score: 12 },
+        { label: "Snow Removal", value: "snow", score: 10 },
+        { label: "Commercial Property Maintenance", value: "commercial", score: 15 },
+        { label: "HOA Community Maintenance", value: "hoa", score: 15 },
+        { label: "Fertilization & Weed Control", value: "fert", score: 8 },
+      ],
+    },
+    {
+      id: "monthly_revenue",
+      type: "option",
+      question: "What is your current average monthly revenue?",
+      options: [
+        { label: "Under $8,000/month", value: "under_8k", score: 5, icon: "💵" },
+        { label: "$8,000 – $20,000/month", value: "8k_20k", score: 15, icon: "💰" },
+        { label: "$20,000 – $50,000/month", value: "20k_50k", score: 25, icon: "💎" },
+        { label: "$50,000+/month", value: "50k_plus", score: 35, icon: "🏦" },
+      ],
+    },
+    {
+      id: "licensed_insured",
+      type: "option",
+      question: "Is your business licensed and insured?",
+      options: [
+        { label: "Yes — licensed & insured", value: "yes", score: 20 },
+        { label: "Working on it", value: "pending", score: 5 },
+        { label: "No, not yet", value: "no", score: 0, disqualify: true },
+      ],
+    },
+    {
+      id: "biggest_challenge",
+      type: "option",
+      question: "What is your biggest challenge right now?",
+      options: [
+        { label: "Finding reliable recurring contracts", value: "contracts", score: 10, icon: "🔍" },
+        { label: "Seasonal revenue fluctuations", value: "seasonal", score: 10, icon: "📅" },
+        { label: "Crew management & retention", value: "staffing", score: 8, icon: "👷" },
+        { label: "Scaling to larger properties", value: "scaling", score: 12, icon: "📊" },
+      ],
+    },
+    {
+      id: "revenue_goal",
+      type: "option",
+      question: "What monthly revenue are you targeting in the next 6 months?",
+      options: [
+        { label: "$15,000 – $30,000/month", value: "15k_30k", score: 10, icon: "🎯" },
+        { label: "$30,000 – $75,000/month", value: "30k_75k", score: 20, icon: "📈" },
+        { label: "$75,000 – $150,000/month", value: "75k_150k", score: 30, icon: "🚀" },
+        { label: "$150,000+/month", value: "150k_plus", score: 35, icon: "💫" },
+      ],
+    },
+    {
+      id: "contact",
+      type: "contact",
+      question: "Where should we send your landscaping contract matches?",
+      subtitle: "Your information is 100% confidential and never sold to third parties",
+    },
+  ],
+};

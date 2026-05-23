@@ -1,0 +1,121 @@
+import type { NicheConfig } from "@/types";
+
+export const hvac: NicheConfig = {
+  slug: "hvac",
+  name: "HVAC",
+  tagline: "Exclusive HVAC Service Contracts",
+  heroHeadline: "Get Matched With Exclusive HVAC Service Contracts In Your Area",
+  heroSubheadline: "We connect qualified HVAC contractors with verified service agreements — no bidding wars, no slow seasons. Answer a few questions to see if you qualify.",
+  ctaText: "Check My Eligibility →",
+  accentColor: "#0369a1",
+  spotsPerMonth: 10,
+  socialProofCount: 612,
+  socialProofLabel: "HVAC contractors matched this month",
+  trustBadges: [
+    "Verified Service Agreements",
+    "Residential & Commercial",
+    "Exclusive Territory",
+    "Year-Round Work",
+  ],
+  thankYouHeadline: "You're Pre-Qualified! 🎉",
+  thankYouSubheadline: "A contract specialist will call you within 24 hours with your HVAC contract matches.",
+  calendarUrl: "https://calendly.com/your-calendar-link",
+  steps: [
+    {
+      id: "in_business",
+      type: "option",
+      question: "Are you currently operating a licensed HVAC business?",
+      subtitle: "We only work with active, operating HVAC companies",
+      options: [
+        { label: "Yes, actively operating", value: "yes", score: 20 },
+        { label: "No, not yet", value: "no", score: 0, disqualify: true },
+      ],
+    },
+    {
+      id: "years_in_business",
+      type: "option",
+      question: "How long have you been in the HVAC industry?",
+      options: [
+        { label: "Less than 1 year", value: "under_1", score: 5, icon: "🌱" },
+        { label: "1 – 3 years", value: "1_3", score: 15, icon: "📈" },
+        { label: "3 – 5 years", value: "3_5", score: 25, icon: "⭐" },
+        { label: "5+ years", value: "5_plus", score: 35, icon: "🏆" },
+      ],
+    },
+    {
+      id: "technicians",
+      type: "option",
+      question: "How many certified technicians do you have on staff?",
+      options: [
+        { label: "Just me", value: "solo", score: 5, icon: "🙋" },
+        { label: "2 – 4 technicians", value: "2_4", score: 15, icon: "👥" },
+        { label: "5 – 10 technicians", value: "5_10", score: 25, icon: "🏢" },
+        { label: "10+ technicians", value: "10_plus", score: 35, icon: "🏗️" },
+      ],
+    },
+    {
+      id: "services",
+      type: "multiselect",
+      question: "Which HVAC services do you offer?",
+      subtitle: "Select all that apply",
+      options: [
+        { label: "Residential Installation", value: "res_install", score: 10 },
+        { label: "Commercial Installation", value: "com_install", score: 15 },
+        { label: "Repair & Diagnostics", value: "repair", score: 10 },
+        { label: "Preventive Maintenance", value: "maintenance", score: 12 },
+        { label: "Emergency Service (24/7)", value: "emergency", score: 15 },
+        { label: "Refrigeration", value: "refrigeration", score: 10 },
+        { label: "Indoor Air Quality", value: "iaq", score: 8 },
+      ],
+    },
+    {
+      id: "monthly_revenue",
+      type: "option",
+      question: "What is your current average monthly revenue?",
+      options: [
+        { label: "Under $10,000/month", value: "under_10k", score: 5, icon: "💵" },
+        { label: "$10,000 – $30,000/month", value: "10k_30k", score: 15, icon: "💰" },
+        { label: "$30,000 – $75,000/month", value: "30k_75k", score: 25, icon: "💎" },
+        { label: "$75,000+/month", value: "75k_plus", score: 35, icon: "🏦" },
+      ],
+    },
+    {
+      id: "licensed_insured",
+      type: "option",
+      question: "Is your business licensed, bonded, and insured?",
+      options: [
+        { label: "Yes — fully licensed & insured", value: "yes", score: 20 },
+        { label: "Working on it", value: "pending", score: 5 },
+        { label: "No, not yet", value: "no", score: 0, disqualify: true },
+      ],
+    },
+    {
+      id: "biggest_challenge",
+      type: "option",
+      question: "What is your biggest challenge right now?",
+      options: [
+        { label: "Consistent lead flow year-round", value: "leads", score: 10, icon: "🔍" },
+        { label: "Growing commercial accounts", value: "commercial", score: 12, icon: "🏢" },
+        { label: "Technician recruitment & retention", value: "staffing", score: 8, icon: "👷" },
+        { label: "Scaling to multiple locations", value: "scaling", score: 12, icon: "📊" },
+      ],
+    },
+    {
+      id: "revenue_goal",
+      type: "option",
+      question: "What monthly revenue are you targeting in the next 6 months?",
+      options: [
+        { label: "$25,000 – $50,000/month", value: "25k_50k", score: 10, icon: "🎯" },
+        { label: "$50,000 – $100,000/month", value: "50k_100k", score: 20, icon: "📈" },
+        { label: "$100,000 – $250,000/month", value: "100k_250k", score: 30, icon: "🚀" },
+        { label: "$250,000+/month", value: "250k_plus", score: 35, icon: "💫" },
+      ],
+    },
+    {
+      id: "contact",
+      type: "contact",
+      question: "Where should we send your HVAC contract matches?",
+      subtitle: "Your information is 100% confidential and never sold to third parties",
+    },
+  ],
+};
